@@ -1,44 +1,44 @@
 {
   "questions": [
     {
-      "question": "Quelle est la capitale de la France ?",
-      "choix_a": "Paris",
-      "choix_b": "Lyon",
-      "choix_c": "Marseille",
-      "choix_d": "Nice",
-      "reponse_correcte": "A"
+      "question": "Quelle est la plus vaste région du Cameroun en superficie ?",
+      "choix_a": "L'Adamaoua",
+      "choix_b": "Le Centre",
+      "choix_c": "Le Nord",
+      "choix_d": "L'Est",
+      "reponse_correcte": "D"
     },
     {
-      "question": "Combien de côtés a un carré ?",
-      "choix_a": "3",
-      "choix_b": "4",
-      "choix_c": "5",
-      "choix_d": "6",
+      "question": "Sur quel fleuve est construit le pont historique de Douala ?",
+      "choix_a": "La Sanaga",
+      "choix_b": "Le Moungo",
+      "choix_c": "Le Wouri",
+      "choix_d": "Le Nyong",
+      "reponse_correcte": "C"
+    },
+    {
+      "question": "Quel pays frontalier se trouve directement à l'ouest du Cameroun ?",
+      "choix_a": "Le Tchad",
+      "choix_b": "Le Nigeria",
+      "choix_c": "Le Gabon",
+      "choix_d": "La RCA",
       "reponse_correcte": "B"
     },
     {
-      "question": "Quel est le plus grand océan du monde ?",
-      "choix_a": "Atlantique",
-      "choix_b": "Indien",
-      "choix_c": "Pacifique",
-      "choix_d": "Arctique",
+      "question": "Quelle région administrative compte la ville de Garoua pour chef-lieu ?",
+      "choix_a": "Extrême-Nord",
+      "choix_b": "Adamaoua",
+      "choix_c": "Nord",
+      "choix_d": "Nord-Ouest",
       "reponse_correcte": "C"
     },
     {
-      "question": "Quel animal est le plus grand de la planète ?",
-      "choix_a": "Éléphant",
-      "choix_b": "Girafe",
-      "choix_c": "Baleine bleue",
-      "choix_d": "Rhinocéros",
-      "reponse_correcte": "C"
-    },
-    {
-      "question": "Quelle langue parle-t-on au Brésil ?",
-      "choix_a": "Espagnol",
-      "choix_b": "Français",
-      "choix_c": "Portugais",
-      "choix_d": "Italien",
-      "reponse_correcte": "C"
+      "question": "Dans quel golfe marin le littoral camerounais s'ouvre-t-il ?",
+      "choix_a": "Golfe d'Aden",
+      "choix_b": "Golfe de Guinée",
+      "choix_c": "Golfe Persique",
+      "choix_d": "Golfe de Syrte",
+      "reponse_correcte": "B"
     }
   ],
   "style": {
