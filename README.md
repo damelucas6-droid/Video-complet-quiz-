@@ -51,9 +51,11 @@ Une vidéo complète est composée de **5 séquences de 12 secondes** :
 
 1. **0s à 3s** : Affichage centré haut du texte de la question + lecture audio de l'énoncé par la voix off française (`edge-tts`).
 2. **3s à 8s** : Apparition des 4 choix verticaux (A, B, C, D) avec fond par défaut (`#1E1E2E`) + son de compte à rebours (`tick.mp3`).
-3. **8s à 12s** : Son de confirmation (`correct.mp3`), l'option gagnante bascule en vert (`#2ECC71`) tandis que les 3 autres passent en gris (`#555555`).
+3. **8s à 12s** : L'option gagnante bascule en vert (`#2ECC71`), les autres passent en gris (`#555555`), et la voix annonce la lettre et le texte de la bonne réponse (par exemple : « La bonne réponse est B : Mercure »), avec le son de confirmation (`correct.mp3`).
 4. **Transition** : Enchaînement immédiat sur la question suivante (Total = 60s).
 5. **Mixage Audio** : Voix off + SFX superposés à la musique de fond bouclée et atténuée à 18% du volume.
+
+La synthèse vocale utilise `edge-tts` et nécessite une connexion Internet pendant la génération. Pour chaque question, renseignez `reponse_correcte` avec `A`, `B`, `C` ou `D` et assurez-vous que le choix correspondant (`choix_a` à `choix_d`) contient le texte à faire prononcer.
 
 ---
 

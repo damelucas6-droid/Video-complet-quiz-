@@ -1,0 +1,9 @@
+# Environnement virtuel Python
+venv/
+__pycache__/
+
+# Fichiers médias générés
+*.mp4
+*.mp3
+output/
+temp/

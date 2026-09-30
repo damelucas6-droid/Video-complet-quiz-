@@ -192,27 +192,64 @@ def resolve_asset_path(path_str: str, default_fallback: Path) -> Path | None:
     return None
 
 
+def build_answer_announcement(question: QuestionItem) -> str:
+    """Construit la phrase prononcée lors de la révélation de la réponse."""
+    correct_answer = getattr(question, f"choix_{question.reponse_correcte.lower()}")
+    return f"La bonne réponse est {question.reponse_correcte} : {correct_answer}."
+
+
+def create_question_text_clip(question: str, font_file: str, color: str) -> TextClip:
+    """Réduit la police jusqu'à ce que la question tienne sans toucher le cadre."""
+    margin = 16
+    for font_size in range(46, 26, -2):
+        clip = TextClip(
+            text=question,
+            font=font_file,
+            font_size=font_size,
+            color=color,
+            size=(960, 280),
+            method="caption",
+            text_align="center",
+            duration=12.0,
+        ).with_start(0.0).with_position(("center", 230))
+        mask = clip.mask.get_frame(0)
+        if not (
+            mask[:, :margin].any()
+            or mask[:, -margin:].any()
+            or mask[:margin, :].any()
+            or mask[-margin:, :].any()
+        ):
+            return clip
+        clip.close()
+    raise ValueError("La question est trop longue pour tenir dans la zone d'affichage.")
+
+
 async def generate_tts_for_questions(
     task_id: str,
     questions: list[QuestionItem],
     voice_name: str,
-) -> list[Path]:
-    """Génère de manière asynchrone les 5 fichiers audio de questions via edge-tts."""
-    tts_paths: list[Path] = []
+) -> tuple[list[Path], list[Path]]:
+    """Génère les fichiers audio des questions et de leurs bonnes réponses."""
+    question_tts_paths: list[Path] = []
+    answer_tts_paths: list[Path] = []
     for idx, q_item in enumerate(questions):
-        output_tts_file = TEMP_DIR / f"{task_id}_q{idx}.mp3"
-        # Taux d'élocution accéléré à +10% selon les spécifications
-        communicate = edge_tts.Communicate(
-            text=q_item.question,
-            voice=voice_name,
-            rate="+10%",
-        )
-        await communicate.save(str(output_tts_file))
-        if not output_tts_file.exists() or output_tts_file.stat().st_size == 0:
-            raise RuntimeError(f"Échec de la génération TTS pour la question {idx + 1}")
-        tts_paths.append(output_tts_file)
-        logger.info(f"[{task_id}] TTS généré pour question {idx + 1}/5 : {output_tts_file.name}")
-    return tts_paths
+        audio_items = [
+            (q_item.question, TEMP_DIR / f"{task_id}_q{idx}.mp3", "+10%", question_tts_paths),
+            (
+                build_answer_announcement(q_item),
+                TEMP_DIR / f"{task_id}_a{idx}.mp3",
+                "+20%",
+                answer_tts_paths,
+            ),
+        ]
+        for text, output_tts_file, rate, output_paths in audio_items:
+            communicate = edge_tts.Communicate(text=text, voice=voice_name, rate=rate)
+            await communicate.save(str(output_tts_file))
+            if not output_tts_file.exists() or output_tts_file.stat().st_size == 0:
+                raise RuntimeError(f"Échec de la génération TTS pour la question {idx + 1}")
+            output_paths.append(output_tts_file)
+            logger.info(f"[{task_id}] TTS généré : {output_tts_file.name}")
+    return question_tts_paths, answer_tts_paths
 
 
 # ---------------------------------------------------------------------------
@@ -221,7 +258,8 @@ async def generate_tts_for_questions(
 def build_and_render_video(
     task_id: str,
     payload: QuizPayload,
-    tts_paths: list[Path],
+    question_tts_paths: list[Path],
+    answer_tts_paths: list[Path],
     output_filepath: Path,
 ) -> None:
     """
@@ -263,7 +301,8 @@ def build_and_render_video(
         # 2. Construction des 5 séquences de 12 secondes (Total = 60s)
         for q_idx in range(5):
             q_item = payload.questions[q_idx]
-            q_tts_path = tts_paths[q_idx]
+            q_tts_path = question_tts_paths[q_idx]
+            answer_tts_path = answer_tts_paths[q_idx]
             sequence_start_time = q_idx * 12.0  # Position temporelle absolue dans la vidéo finale
 
             # A. Fond vidéo de la séquence (12 secondes)
@@ -302,19 +341,10 @@ def build_and_render_video(
             )
 
             # C. Question texte (0s à 12s, méthode 'caption' pour retour à la ligne automatique)
-            question_text_clip = (
-                TextClip(
-                    text=q_item.question,
-                    font=font_file,
-                    font_size=46,
-                    color=style.color_question,
-                    size=(900, 260),
-                    method="caption",
-                    text_align="center",
-                    duration=12.0,
-                )
-                .with_start(0.0)
-                .with_position(("center", 230))
+            question_text_clip = create_question_text_clip(
+                q_item.question,
+                font_file,
+                style.color_question,
             )
 
             # Barre de compte à rebours visuelle (active de 3s à 8s)
@@ -404,7 +434,19 @@ def build_and_render_video(
             except Exception as e:
                 logger.error(f"[{task_id}] Erreur chargement TTS question {q_idx + 1} : {e}")
 
-            # 2. SFX Tick de compte à rebours (3s à 8s = durée 5s)
+            # 2. Voix off de la bonne réponse, au début de la révélation (8s)
+            try:
+                answer_audio = AudioFileClip(str(answer_tts_path))
+                clips_to_close.append(answer_audio)
+                answer_dur = min(answer_audio.duration, 4.0)
+                answer_cut = answer_audio.subclipped(0, answer_dur).with_start(
+                    sequence_start_time + 8.0
+                )
+                all_sfx_audio_clips.append(answer_cut)
+            except Exception as e:
+                logger.error(f"[{task_id}] Erreur chargement TTS réponse {q_idx + 1} : {e}")
+
+            # 3. SFX Tick de compte à rebours (3s à 8s = durée 5s)
             if tick_path:
                 try:
                     tick_audio = AudioFileClip(str(tick_path))
@@ -415,7 +457,7 @@ def build_and_render_video(
                 except Exception as e:
                     logger.error(f"[{task_id}] Erreur SFX tick : {e}")
 
-            # 3. SFX Correct de confirmation (8s à 12s)
+            # 4. SFX Correct de confirmation (8s à 12s)
             if correct_path:
                 try:
                     correct_audio = AudioFileClip(str(correct_path))
@@ -487,15 +529,16 @@ async def execute_quiz_background_task(task_id: str, payload: QuizPayload) -> No
 
     try:
         TASK_REGISTRY[task_id]["status"] = "generating_tts"
-        TASK_REGISTRY[task_id]["message"] = "Synthèse vocale des 5 questions en cours (edge-tts)..."
+        TASK_REGISTRY[task_id]["message"] = "Synthèse vocale des questions et réponses en cours (edge-tts)..."
         TASK_REGISTRY[task_id]["progress"] = 20
 
         # Étape 1 : Synthèse vocale asynchrone
-        temp_files = await generate_tts_for_questions(
+        question_tts_paths, answer_tts_paths = await generate_tts_for_questions(
             task_id=task_id,
             questions=payload.questions,
             voice_name=payload.style.voice_name,
         )
+        temp_files = question_tts_paths + answer_tts_paths
 
         TASK_REGISTRY[task_id]["status"] = "rendering_video"
         TASK_REGISTRY[task_id]["message"] = "Assemblage visuel MoviePy v2.x et encodage FFmpeg (preset fast, 4 threads)..."
@@ -508,7 +551,8 @@ async def execute_quiz_background_task(task_id: str, payload: QuizPayload) -> No
             build_and_render_video,
             task_id,
             payload,
-            temp_files,
+            question_tts_paths,
+            answer_tts_paths,
             output_path,
         )
 
