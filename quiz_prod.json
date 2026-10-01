@@ -1,45 +1,45 @@
 {
-  "questions": [
-    {
-      "question": "Quelle est la plus vaste région du Cameroun en superficie ?",
-      "choix_a": "L'Adamaoua",
-      "choix_b": "Le Centre",
-      "choix_c": "Le Nord",
-      "choix_d": "L'Est",
-      "reponse_correcte": "D"
-    },
-    {
-      "question": "Sur quel fleuve est construit le pont historique de Douala ?",
-      "choix_a": "La Sanaga",
-      "choix_b": "Le Moungo",
-      "choix_c": "Le Wouri",
-      "choix_d": "Le Nyong",
-      "reponse_correcte": "C"
-    },
-    {
-      "question": "Quel pays frontalier se trouve directement à l'ouest du Cameroun ?",
-      "choix_a": "Le Tchad",
-      "choix_b": "Le Nigeria",
-      "choix_c": "Le Gabon",
-      "choix_d": "La RCA",
-      "reponse_correcte": "B"
-    },
-    {
-      "question": "Quelle région administrative compte la ville de Garoua pour chef-lieu ?",
-      "choix_a": "Extrême-Nord",
-      "choix_b": "Adamaoua",
-      "choix_c": "Nord",
-      "choix_d": "Nord-Ouest",
-      "reponse_correcte": "C"
-    },
-    {
-      "question": "Dans quel golfe marin le littoral camerounais s'ouvre-t-il ?",
-      "choix_a": "Golfe d'Aden",
-      "choix_b": "Golfe de Guinée",
-      "choix_c": "Golfe Persique",
-      "choix_d": "Golfe de Syrte",
-      "reponse_correcte": "B"
-    }
+   "questions": [
+      {
+        "question": "Quel immense barrage réservoir de l'Est régule le débit du fleuve Sanaga ?",
+        "choix_a": "Lom Pangar",
+        "choix_b": "Memve'ele",
+        "choix_c": "Mekin",
+        "choix_d": "Lagdo",
+        "reponse_correcte": "A"
+      },
+      {
+        "question": "Quel stade moderne de Douala a accueilli les matches phares de la poule E durant la CAN 2021 ?",
+        "choix_a": "Stade Mbappé Léppé",
+        "choix_b": "Stade de Japoma",
+        "choix_c": "Stade omnisports de Bepanda",
+        "choix_d": "Stade de la Réunification",
+        "reponse_correcte": "B"
+      },
+      {
+        "question": "Quelle athlète camerounaise de saut en longueur a été médaillée d'or aux Jeux du Commonwealth en 2022 ?",
+        "choix_a": "Françoise Mbango",
+        "choix_b": "Ese Brume",
+        "choix_c": "Marthe Koala",
+        "choix_d": "Murielle Ahouré",
+        "reponse_correcte": "A"
+      },
+      {
+        "question": "Quel moyen de transport par câble urbain a fait l'objet d'études avancées pour la ville de Yaoundé ?",
+        "choix_a": "Le métro sous-terrain",
+        "choix_b": "Le téléphérique urbain",
+        "choix_c": "Le monorail rapide",
+        "choix_d": "Le tramway fluvial",
+        "reponse_correcte": "B"
+      },
+      {
+        "question": "Quelle entreprise parapublique gère le raffinage du pétrole brut au Cameroun depuis Limbé ?",
+        "choix_a": "SNH",
+        "choix_b": "SONARA",
+        "choix_c": "SCDP",
+        "choix_d": "TRADEX",
+        "reponse_correcte": "B"
+      }
   ],
   "style": {
     "background_video": "assets/backgrounds/default.mp4",
