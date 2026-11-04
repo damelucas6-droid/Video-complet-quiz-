@@ -1,44 +1,44 @@
 {
    "questions": [
       {
-        "question": "Quel immense barrage réservoir de l'Est régule le débit du fleuve Sanaga ?",
-        "choix_a": "Lom Pangar",
-        "choix_b": "Memve'ele",
-        "choix_c": "Mekin",
-        "choix_d": "Lagdo",
+        "question": "Quel est le réseau mobile de l'opérateur CAMTEL ?",
+        "choix_a": "Orange",
+        "choix_b": "Blue",
+        "choix_c": "MTN",
+        "choix_d": "Nexttel",
+        "reponse_correcte": "B"
+      },
+      {
+        "question": "Quel studio camerounais a créé le jeu vidéo Aurion ?",
+        "choix_a": "Kiro'o Games",
+        "choix_b": "Zuoix",
+        "choix_c": "Mboa Studio",
+        "choix_d": "Kmer Games",
         "reponse_correcte": "A"
       },
       {
-        "question": "Quel stade moderne de Douala a accueilli les matches phares de la poule E durant la CAN 2021 ?",
-        "choix_a": "Stade Mbappé Léppé",
-        "choix_b": "Stade de Japoma",
-        "choix_c": "Stade omnisports de Bepanda",
-        "choix_d": "Stade de la Réunification",
+        "question": "Comment surnomme-t-on le pôle technologique de Buéa ?",
+        "choix_a": "Silicon Forest",
+        "choix_b": "Silicon Mountain",
+        "choix_c": "Tech Valley",
+        "choix_d": "Digital Mount",
         "reponse_correcte": "B"
       },
       {
-        "question": "Quelle athlète camerounaise de saut en longueur a été médaillée d'or aux Jeux du Commonwealth en 2022 ?",
-        "choix_a": "Françoise Mbango",
-        "choix_b": "Ese Brume",
-        "choix_c": "Marthe Koala",
-        "choix_d": "Murielle Ahouré",
+        "question": "Quelle application camerounaise permet de consulter un médecin en ligne ?",
+        "choix_a": "Waspito",
+        "choix_b": "HealthCam",
+        "choix_c": "Doctolib",
+        "choix_d": "MedLine",
         "reponse_correcte": "A"
       },
       {
-        "question": "Quel moyen de transport par câble urbain a fait l'objet d'études avancées pour la ville de Yaoundé ?",
-        "choix_a": "Le métro sous-terrain",
-        "choix_b": "Le téléphérique urbain",
-        "choix_c": "Le monorail rapide",
-        "choix_d": "Le tramway fluvial",
-        "reponse_correcte": "B"
-      },
-      {
-        "question": "Quelle entreprise parapublique gère le raffinage du pétrole brut au Cameroun depuis Limbé ?",
-        "choix_a": "SNH",
-        "choix_b": "SONARA",
-        "choix_c": "SCDP",
-        "choix_d": "TRADEX",
-        "reponse_correcte": "B"
+        "question": "Quelle technologie domine les paiements numériques au Cameroun ?",
+        "choix_a": "La cryptomonnaie",
+        "choix_b": "La carte bancaire",
+        "choix_c": "Le Mobile Money",
+        "choix_d": "Le virement NFC",
+        "reponse_correcte": "C"
       }
   ],
   "style": {
