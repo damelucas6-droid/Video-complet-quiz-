@@ -1,44 +1,44 @@
 {
    "questions": [
       {
-        "question": "Quel est le parti politique actuellement au pouvoir au Cameroun ?",
-        "choix_a": "SDF",
-        "choix_b": "MRC",
-        "choix_c": "RDPC",
-        "choix_d": "PCRN",
+        "question": "Quelle carte bancaire virtuelle camerounaise est très populaire chez les jeunes ?",
+        "choix_a": "PaySika",
+        "choix_b": "Djamo",
+        "choix_c": "Wave",
+        "choix_d": "Kuda",
+        "reponse_correcte": "A"
+      },
+      {
+        "question": "Quel service de VTC via application domine le marché à Yaoundé et Douala ?",
+        "choix_a": "Uber",
+        "choix_b": "Bolt",
+        "choix_c": "Yango",
+        "choix_d": "Heetch",
         "reponse_correcte": "C"
       },
       {
-        "question": "Qui occupe le poste de Premier Ministre chef du gouvernement ?",
-        "choix_a": "Philémon Yang",
-        "choix_b": "Joseph Dion Ngute",
-        "choix_c": "Ephraïm Inoni",
-        "choix_d": "Peter Mafany Musonge",
+        "question": "Quelle institution gère l'extension de domaine internet national '.cm' ?",
+        "choix_a": "L'ART",
+        "choix_b": "L'ANTIC",
+        "choix_c": "Le MINPOSTEL",
+        "choix_d": "CAMTEL",
         "reponse_correcte": "B"
       },
       {
-        "question": "Quel leader politique dirige le parti d'opposition MRC ?",
-        "choix_a": "Joshua Osih",
-        "choix_b": "Cabral Libii",
-        "choix_c": "Maurice Kamto",
-        "choix_d": "Grégoire Owona",
+        "question": "Quelle agence publique régule les télécommunications au Cameroun ?",
+        "choix_a": "L'ART",
+        "choix_b": "Le CNC",
+        "choix_c": "L'ANOR",
+        "choix_d": "La CONAC",
+        "reponse_correcte": "A"
+      },
+      {
+        "question": "Quelle application de messagerie très utilisée a récemment intégré 'Meta AI' ?",
+        "choix_a": "Telegram",
+        "choix_b": "Signal",
+        "choix_c": "WhatsApp",
+        "choix_d": "Viber",
         "reponse_correcte": "C"
-      },
-      {
-        "question": "Quelle institution représente la chambre basse du Parlement camerounais ?",
-        "choix_a": "Le Sénat",
-        "choix_b": "Le Conseil Constitutionnel",
-        "choix_c": "La Cour Suprême",
-        "choix_d": "L'Assemblée Nationale",
-        "reponse_correcte": "D"
-      },
-      {
-        "question": "Dans quelle ville siègent les principales institutions politiques nationales ?",
-        "choix_a": "Douala",
-        "choix_b": "Yaoundé",
-        "choix_c": "Garoua",
-        "choix_d": "Bamenda",
-        "reponse_correcte": "B"
       }
    ],
   "style": {
@@ -48,9 +48,9 @@
     "correct_sfx": "assets/sfx/correct.mp3",
     "font_path": "assets/fonts/Montserrat-Black.ttf",
     "color_question": "#FFFFFF",
-    "color_box_default": "#11111B",
-    "color_box_correct": "#00FF66",
-    "color_box_wrong": "#FF0055",
-    "voice_name": "fr-FR-HenriNeural"
+    "color_box_default": "#1E1E2E",
+    "color_box_correct": "#2ECC71",
+    "color_box_wrong": "#555555",
+    "voice_name": "fr-FR-RemyMultilingualNeural"
   }
 }
