@@ -1,46 +1,46 @@
 {
    "questions": [
       {
-        "question": "Quel est le réseau mobile de l'opérateur CAMTEL ?",
-        "choix_a": "Orange",
-        "choix_b": "Blue",
-        "choix_c": "MTN",
-        "choix_d": "Nexttel",
+        "question": "Quel nouveau barrage sur la Sanaga produit de l'électricité ?",
+        "choix_a": "Lom Pangar",
+        "choix_b": "Nachtigal",
+        "choix_c": "Memve'ele",
+        "choix_d": "Mekin",
         "reponse_correcte": "B"
       },
       {
-        "question": "Quel studio camerounais a créé le jeu vidéo Aurion ?",
-        "choix_a": "Kiro'o Games",
-        "choix_b": "Zuoix",
-        "choix_c": "Mboa Studio",
-        "choix_d": "Kmer Games",
-        "reponse_correcte": "A"
-      },
-      {
-        "question": "Comment surnomme-t-on le pôle technologique de Buéa ?",
-        "choix_a": "Silicon Forest",
-        "choix_b": "Silicon Mountain",
-        "choix_c": "Tech Valley",
-        "choix_d": "Digital Mount",
+        "question": "Dans quelle ligue de MMA combat actuellement Francis Ngannou ?",
+        "choix_a": "UFC",
+        "choix_b": "PFL",
+        "choix_c": "Bellator",
+        "choix_d": "ONE FC",
         "reponse_correcte": "B"
       },
       {
-        "question": "Quelle application camerounaise permet de consulter un médecin en ligne ?",
-        "choix_a": "Waspito",
-        "choix_b": "HealthCam",
-        "choix_c": "Doctolib",
-        "choix_d": "MedLine",
-        "reponse_correcte": "A"
-      },
-      {
-        "question": "Quelle technologie domine les paiements numériques au Cameroun ?",
-        "choix_a": "La cryptomonnaie",
-        "choix_b": "La carte bancaire",
-        "choix_c": "Le Mobile Money",
-        "choix_d": "Le virement NFC",
+        "question": "Quel nouveau système de bus rapides est en projet à Douala ?",
+        "choix_a": "Métro",
+        "choix_b": "Tramway",
+        "choix_c": "BRT",
+        "choix_d": "Monorail",
         "reponse_correcte": "C"
+      },
+      {
+        "question": "Quel document d'identité s'obtient désormais en 48 heures ?",
+        "choix_a": "Passeport",
+        "choix_b": "CNI",
+        "choix_c": "Permis",
+        "choix_d": "Carte consulaire",
+        "reponse_correcte": "B"
+      },
+      {
+        "question": "Qu'est-ce qui a été automatisé sur l'axe Yaoundé-Douala ?",
+        "choix_a": "Les radars",
+        "choix_b": "Les péages",
+        "choix_c": "Les pesages",
+        "choix_d": "L'éclairage",
+        "reponse_correcte": "B"
       }
-  ],
+   ],
   "style": {
     "background_video": "assets/backgrounds/default.mp4",
     "music_file": "assets/sfx/music.mp3",
@@ -48,9 +48,9 @@
     "correct_sfx": "assets/sfx/correct.mp3",
     "font_path": "assets/fonts/Montserrat-Black.ttf",
     "color_question": "#FFFFFF",
-    "color_box_default": "#1E1E2E",
-    "color_box_correct": "#2ECC71",
-    "color_box_wrong": "#555555",
+    "color_box_default": "#2B2D42",
+    "color_box_correct": "#38B000",
+    "color_box_wrong": "#D00000",
     "voice_name": "fr-FR-HenriNeural"
   }
 }
