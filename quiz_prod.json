@@ -1,43 +1,43 @@
 {
    "questions": [
       {
-        "question": "Quel nouveau barrage sur la Sanaga produit de l'électricité ?",
-        "choix_a": "Lom Pangar",
-        "choix_b": "Nachtigal",
-        "choix_c": "Memve'ele",
-        "choix_d": "Mekin",
-        "reponse_correcte": "B"
-      },
-      {
-        "question": "Dans quelle ligue de MMA combat actuellement Francis Ngannou ?",
-        "choix_a": "UFC",
-        "choix_b": "PFL",
-        "choix_c": "Bellator",
-        "choix_d": "ONE FC",
-        "reponse_correcte": "B"
-      },
-      {
-        "question": "Quel nouveau système de bus rapides est en projet à Douala ?",
-        "choix_a": "Métro",
-        "choix_b": "Tramway",
-        "choix_c": "BRT",
-        "choix_d": "Monorail",
+        "question": "Quel est le parti politique actuellement au pouvoir au Cameroun ?",
+        "choix_a": "SDF",
+        "choix_b": "MRC",
+        "choix_c": "RDPC",
+        "choix_d": "PCRN",
         "reponse_correcte": "C"
       },
       {
-        "question": "Quel document d'identité s'obtient désormais en 48 heures ?",
-        "choix_a": "Passeport",
-        "choix_b": "CNI",
-        "choix_c": "Permis",
-        "choix_d": "Carte consulaire",
+        "question": "Qui occupe le poste de Premier Ministre chef du gouvernement ?",
+        "choix_a": "Philémon Yang",
+        "choix_b": "Joseph Dion Ngute",
+        "choix_c": "Ephraïm Inoni",
+        "choix_d": "Peter Mafany Musonge",
         "reponse_correcte": "B"
       },
       {
-        "question": "Qu'est-ce qui a été automatisé sur l'axe Yaoundé-Douala ?",
-        "choix_a": "Les radars",
-        "choix_b": "Les péages",
-        "choix_c": "Les pesages",
-        "choix_d": "L'éclairage",
+        "question": "Quel leader politique dirige le parti d'opposition MRC ?",
+        "choix_a": "Joshua Osih",
+        "choix_b": "Cabral Libii",
+        "choix_c": "Maurice Kamto",
+        "choix_d": "Grégoire Owona",
+        "reponse_correcte": "C"
+      },
+      {
+        "question": "Quelle institution représente la chambre basse du Parlement camerounais ?",
+        "choix_a": "Le Sénat",
+        "choix_b": "Le Conseil Constitutionnel",
+        "choix_c": "La Cour Suprême",
+        "choix_d": "L'Assemblée Nationale",
+        "reponse_correcte": "D"
+      },
+      {
+        "question": "Dans quelle ville siègent les principales institutions politiques nationales ?",
+        "choix_a": "Douala",
+        "choix_b": "Yaoundé",
+        "choix_c": "Garoua",
+        "choix_d": "Bamenda",
         "reponse_correcte": "B"
       }
    ],
@@ -48,9 +48,9 @@
     "correct_sfx": "assets/sfx/correct.mp3",
     "font_path": "assets/fonts/Montserrat-Black.ttf",
     "color_question": "#FFFFFF",
-    "color_box_default": "#2B2D42",
-    "color_box_correct": "#38B000",
-    "color_box_wrong": "#D00000",
+    "color_box_default": "#11111B",
+    "color_box_correct": "#00FF66",
+    "color_box_wrong": "#FF0055",
     "voice_name": "fr-FR-HenriNeural"
   }
 }
